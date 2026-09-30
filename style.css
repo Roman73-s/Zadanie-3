@@ -187,7 +187,6 @@ h1, h2 {
 
   .header-inner {
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
     max-width: 960px;
     margin: 0 auto;
@@ -202,6 +201,7 @@ h1, h2 {
     flex-direction: row;
     width: auto;
     gap: 25px;
+    margin-left: auto;
   }
 
   .nav-link {
