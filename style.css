@@ -239,5 +239,8 @@ h1, h2 {
 
   .data-table {
     font-size: 14px;
+  img{
+    max-width: 100%;
+    height: auto;
   }
 }
