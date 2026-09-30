@@ -1,3 +1,6 @@
+
+
+/* Общие */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -17,16 +20,15 @@ h1, h2 {
 }
 
 .header-inner {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 10px 15px;
+  padding: 15px;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 12px;
 }
 
 .logo-link {
   display: block;
-  margin-right: 15px;
 }
 
 .logo {
@@ -37,26 +39,26 @@ h1, h2 {
   display: block;
 }
 
-.site-title {
-  flex: 1;
-}
-
 .site-title h1 {
-  font-size: 20px;
+  font-size: 22px;
   margin: 0;
   color: #f0f0f0;
+  text-align: center;
 }
 
-/*меню*/
 .site-nav {
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
 }
 
 .nav-link {
   color: #f0f0f0;
   text-decoration: none;
   font-weight: bold;
+  padding: 6px 0;
 }
 
 .nav-link:hover {
@@ -65,21 +67,36 @@ h1, h2 {
 }
 
 .content {
-  max-width: 960px;
-  margin: 20px auto;
-  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 15px;
+}
+
+#table {
+  order: 1;
+}
+
+#links {
+  order: 2;
+}
+
+#form {
+  order: 3;
 }
 
 .block {
   background: #2a2a2a;
-  padding: 20px;
-  margin-bottom: 20px;
+  padding: 15px;
   border: 1px solid #3a3a3a;
 }
 
-/*СС*/
+.links-list {
+  padding-left: 20px;
+}
+
 .links-list li {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .links-list a {
@@ -88,20 +105,21 @@ h1, h2 {
 }
 
 .links-list a:hover {
-  text-decoration: underline;
   color: #ffb3b3;
+  text-decoration: underline;
 }
 
 .data-table {
   width: 100%;
   border-collapse: collapse;
   color: #dcdcdc;
+  font-size: 13px;
 }
 
 .data-table th,
 .data-table td {
   border: 1px solid #444;
-  padding: 8px 10px;
+  padding: 6px 8px;
   text-align: left;
 }
 
@@ -118,22 +136,22 @@ h1, h2 {
   background: #232323;
 }
 
-
 .form-label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .form-input,
 .form-select,
 .form-textarea {
-  padding: 5px;
+  padding: 8px;
   border: 1px solid #555;
   background: #1a1a1a;
   color: #dcdcdc;
   font-family: inherit;
   font-size: 14px;
-  min-width: 250px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-textarea {
@@ -141,18 +159,19 @@ h1, h2 {
 }
 
 .form-button {
-  padding: 8px 20px;
+  padding: 10px 20px;
   background: #7a1f1f;
   color: #f0f0f0;
   border: none;
   cursor: pointer;
   font-size: 14px;
+  width: 100%;
+  margin-top: 10px;
 }
 
 .form-button:hover {
   background: #a02a2a;
 }
-
 .site-footer {
   width: 100%;
   background: #141414;
@@ -160,8 +179,65 @@ h1, h2 {
 }
 
 .footer-inner {
-  max-width: 960px;
-  margin: 0 auto;
   padding: 15px;
   text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+
+  .header-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 15px;
+  }
+
+  .site-title h1 {
+    text-align: left;
+  }
+
+  .site-nav {
+    flex-direction: row;
+    width: auto;
+    gap: 25px;
+  }
+
+  .nav-link {
+    padding: 0;
+  }
+
+  .content {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 0 15px;
+  }
+
+  #links {
+    order: 1;
+  }
+
+  #table {
+    order: 2;
+  }
+
+  #form {
+    order: 3;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    width: auto;
+    min-width: 280px;
+  }
+
+  .form-button {
+    width: auto;
+  }
+
+  .data-table {
+    font-size: 14px;
+  }
 }
